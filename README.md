@@ -6,3 +6,8 @@ This Add-In adds a button to the Quick Access Toolbar and the create pulldown me
 
 ## License
 Samples are licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
+
+## Written by
+
+Written by Wayne Brill 
+ (Autodesk Developer Network)
