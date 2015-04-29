@@ -1,4 +1,4 @@
-# Edit_Parameters_CSV_Python
+# ReadWriteParametersFromFile_Python
 Fusion API Add-In that adds a button to the UI that allows you to select a CSV (comma seperated values) file and then edits existing Attributes
 
 ## Usage
