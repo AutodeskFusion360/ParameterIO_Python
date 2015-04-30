@@ -124,7 +124,7 @@ def run(context):
         workspaces_ = ui.workspaces
         modelingWorkspace_ = workspaces_.itemById('FusionSolidEnvironment')
         toolbarPanels_ = modelingWorkspace_.toolbarPanels
-        toolbarPanel_ = toolbarPanels_.item(0) # add the new command under the first panel
+        toolbarPanel_ = toolbarPanels_.item(1) # add the new command under the secind panel
         toolbarControlsPanel_ = toolbarPanel_.controls
         toolbarControlPanel_ = toolbarControlsPanel_.itemById(commandIdOnPanel)
         if not toolbarControlPanel_:
@@ -179,49 +179,95 @@ def stop(context):
             ui.messageBox('AddIn Stop Failed:\n{}'.format(traceback.format_exc()))
 
 def updateParamsFromCSV():
-    ui = None
+     app = adsk.core.Application.get()
+     ui  = app.userInterface
+     
+     try:
+         #Ask if reading or writing parameters
+         dialogResult = ui.messageBox('Reading or writing parameters? Read = Yes, Write = No', 'Read or Write Parameters', adsk.core.MessageBoxButtonTypes.YesNoCancelButtonType, adsk.core.MessageBoxIconTypes.QuestionIconType) 
+         if dialogResult == adsk.core.DialogResults.DialogYes:
+             readParameters = True
+         elif dialogResult == adsk.core.DialogResults.DialogNo:
+             readParameters = False
+         else:
+             return
+            
+         fileDialog = ui.createFileDialog()
+         fileDialog.isMultiSelectEnabled = False
+         fileDialog.title = "Get the file to read from or the file to save the parameters to"
+         fileDialog.filter = 'Text files (*.csv)'
+         fileDialog.filterIndex = 0
+         if readParameters:
+             dialogResult = fileDialog.showOpen()
+         else:
+             dialogResult = fileDialog.showSave()
+             
+         if dialogResult == adsk.core.DialogResults.DialogOK:
+             filename = fileDialog.filename
+         else:
+             return
+
+         #if readParameters is true read the parameters from a file
+         if readParameters:
+             readTheParameters(filename)
+         else:
+             writeTheParameters(filename)
+
+     except:
+         if ui:
+             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
+
+            
+def writeTheParameters(theFileName):
+    app = adsk.core.Application.get()
+    design = app.activeProduct
+      
+    result = ""
+    for _param in design.userParameters:
+        result = result + _param.name +  "," + _param.unit +  "," + _param.expression + "," + _param.comment + "\n"
+            
+    outputFile = open(theFileName, 'w')
+    outputFile.writelines(result)
+    outputFile.close()
+    
+    #get the name of the file without the path    
+    pathsInTheFileName = theFileName.split("/")
+    ui  = app.userInterface
+    ui.messageBox('Parameters written to ' + pathsInTheFileName[-1])   
+   
+def readTheParameters(theFileName):
+    app = adsk.core.Application.get()
+    design = app.activeProduct
     
     try:
-        app = adsk.core.Application.get()
-        design = app.activeProduct
-        ui  = app.userInterface
-        
-        fileDialog = ui.createFileDialog()
-        fileDialog.isMultiSelectEnabled = False
-        fileDialog.title = "Select CSV file the with parameters"
-        fileDialog.filter = 'Text files (*.csv)'
-        fileDialog.filterIndex = 0
-        dialogResult = fileDialog.showOpen()
-        if dialogResult == adsk.core.DialogResults.DialogOK:
-            filename = fileDialog.filename
-        else:
-            return
-        
-        
-        # get the names of current parameters and put them in a list
         paramsList = []
         for oParam in design.allParameters:
-           paramsList.append(oParam.name)           
+            paramsList.append(oParam.name)           
         
         # Read the csv file.
-        csvFile = open(filename)
+        csvFile = open(theFileName)
         for line in csvFile:
             # Get the values from the csv file.
             valsInTheLine = line.split(',')
             nameOfParam = valsInTheLine[0]
-            valueOfParam = valsInTheLine[1]
-            # if the name of the paremeter is not an existing parameter
+            unitOfParam = valsInTheLine[1]
+            expressionOfParam = valsInTheLine[2]
+            comentOfParamFromFile = valsInTheLine[3]
+            #need to remove the return character from the comment
+            commentOfParamList = comentOfParamFromFile.split("\n")
+            commentOfParam = commentOfParamList[0]
+            # if the name of the paremeter is not an existing parameter add it
             if nameOfParam not in paramsList:
-                valInput_Param = adsk.core.ValueInput.createByString(valueOfParam)                
-                design.userParameters.add(nameOfParam, valInput_Param, 'mm', 'Comment')
-                #create a new parameter            
+                valInput_Param = adsk.core.ValueInput.createByString(expressionOfParam) 
+                design.userParameters.add(nameOfParam, valInput_Param, unitOfParam, commentOfParam)
+            #update the values of existing parameters            
             else:
                 paramInModel = design.userParameters.itemByName(nameOfParam)
-                paramInModel.expression = valueOfParam
-     
-        ui.messageBox('Finished adding parameters')
-
-    except Exception as error:
+                paramInModel.unit = unitOfParam
+                paramInModel.expression = expressionOfParam
+                paramInModel.comment = commentOfParam
+        ui  = app.userInterface
+        ui.messageBox('Finished reading and updating parameters')
+    except:
         if ui:
-           ui.messageBox('Failed : ' + str(error))            
-           #ui.messageBox('Failed:\n{}'.format(traceback.forma​t_exc()))           
+            ui.messageBox('AddIn Stop Failed:\n{}'.format(traceback.format_exc()))
