@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" AutodeskProduct="Fusion360" Name="Parameter I/O Plugin for Fusion 360" Description="Exports sketch to DXF and converts splines to polylines in it" AppVersion="1.0.0" FriendlyVersion="1.0.0" ProductType="Application" SupportedLocales="Enu" AppNameSpace="appstore.exchange.autodesk.com" Author="Autodesk" ProductCode="{b3b4e577-b7c4-4a54-a7a8-10eaa851a95a}" UpgradeCode="{2151ff4a-cc6e-4519-b4a5-c64ec2523e37}" OnlineDocumentation="https://rawgit.com/AutodeskFusion360/DXFSplineToPolyline_Python/master/helpfile.html">
+  <CompanyDetails Name="Autodesk" Email="fusion.apps@autodesk.com" Url="www.autodesk.com" />
+  <RuntimeRequirements OS="Win64|MacOS" Platform="Fusion360" />
+  <Components>
+    <RuntimeRequirements OS="Win64|MacOS" Platform="Fusion360" SeriesMin="2.0.1482"  />
+    <ComponentEntry AppName="Parameter I/O Plugin for Fusion 360" Version="1.0.0" ModuleName="./Contents/ParameterIO.manifest" AppDescription="Exports sketch to DXF and converts splines to polylines in it" />
+    <ComponentEntry AppName="Parameter I/O Plugin for Fusion 360" Version="1.0.0" ModuleName="./Contents/ParameterIO.py" AppDescription="Exports sketch to DXF and converts splines to polylines in it" />
+  </Components>
+</ApplicationPackage>
