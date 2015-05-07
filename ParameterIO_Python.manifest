@@ -7,6 +7,6 @@
 		"":	"Allows you to select a CSV (comma seperated values) file and then edits existing Attributes. Also allows you to write parameters to a file"
 	},
 	"version":	"1.0",
-	"runOnStartup":	false,
+	"runOnStartup":	true,
 	"supportedOS":	"windows|mac"
 }
