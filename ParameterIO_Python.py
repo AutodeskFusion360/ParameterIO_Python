@@ -230,7 +230,7 @@ def writeTheParameters(theFileName):
 def readTheParameters(theFileName):
     app = adsk.core.Application.get()
     design = app.activeProduct
-    
+    ui  = app.userInterface
     try:
         paramsList = []
         for oParam in design.allParameters:
@@ -244,21 +244,24 @@ def readTheParameters(theFileName):
             nameOfParam = valsInTheLine[0]
             unitOfParam = valsInTheLine[1]
             expressionOfParam = valsInTheLine[2]
-            comentOfParamFromFile = valsInTheLine[3]
-            #need to remove the return character from the comment
-            commentOfParamList = comentOfParamFromFile.split("\n")
-            commentOfParam = commentOfParamList[0]
+            commentOfParam = ''
+            # comment might be missing
+            if len(valsInTheLine) > 3:
+                comentOfParamFromFile = valsInTheLine[3]
+                #need to remove the return character from the comment
+                commentOfParamList = comentOfParamFromFile.split("\n")
+                commentOfParam = commentOfParamList[0]
+                
             # if the name of the paremeter is not an existing parameter add it
             if nameOfParam not in paramsList:
                 valInput_Param = adsk.core.ValueInput.createByString(expressionOfParam) 
                 design.userParameters.add(nameOfParam, valInput_Param, unitOfParam, commentOfParam)
             #update the values of existing parameters            
             else:
-                paramInModel = design.userParameters.itemByName(nameOfParam)
+                paramInModel = design.allParameters.itemByName(nameOfParam)
                 paramInModel.unit = unitOfParam
                 paramInModel.expression = expressionOfParam
                 paramInModel.comment = commentOfParam
-        ui  = app.userInterface
         ui.messageBox('Finished reading and updating parameters')
     except:
         if ui:

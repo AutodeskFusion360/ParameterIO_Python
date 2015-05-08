@@ -4,9 +4,9 @@
 	"id":	"96adeab4-7e93-41f4-a4cc-90aba9a8be25",
 	"author":	"Wayne Brill, Autodesk",
 	"description":	{
-		"":	"Allows you to select a CSV (comma seperated values) file and then edits existing Attributes. Also allows you to write parameters to a file"
+		"":	"Enables users to update parameters from or save them to a CSV (Comma Separated Values) file"
 	},
-	"version":	"1.0",
+	"version":	"1.0.0",
 	"runOnStartup":	true,
 	"supportedOS":	"windows|mac"
 }
