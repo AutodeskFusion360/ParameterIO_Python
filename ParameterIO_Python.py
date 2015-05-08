@@ -240,23 +240,26 @@ def readTheParameters(theFileName):
         csvFile = open(theFileName)
         for line in csvFile:
             # Get the values from the csv file.
+            # remove end line characters
+            line = line.rstrip('\n\r')
             valsInTheLine = line.split(',')
             nameOfParam = valsInTheLine[0]
             unitOfParam = valsInTheLine[1]
             expressionOfParam = valsInTheLine[2]
-            commentOfParam = ''
+            # userParameters.add does not like empty string as comment
+            # so we make it a space
+            commentOfParam = ' '
             # comment might be missing
             if len(valsInTheLine) > 3:
-                comentOfParamFromFile = valsInTheLine[3]
-                #need to remove the return character from the comment
-                commentOfParamList = comentOfParamFromFile.split("\n")
-                commentOfParam = commentOfParamList[0]
+                # if it's not an empty string    
+                if valsInTheLine[3] != '':
+                    commentOfParam = valsInTheLine[3] 
                 
             # if the name of the paremeter is not an existing parameter add it
             if nameOfParam not in paramsList:
                 valInput_Param = adsk.core.ValueInput.createByString(expressionOfParam) 
                 design.userParameters.add(nameOfParam, valInput_Param, unitOfParam, commentOfParam)
-            #update the values of existing parameters            
+            # update the values of existing parameters            
             else:
                 paramInModel = design.allParameters.itemByName(nameOfParam)
                 paramInModel.unit = unitOfParam
