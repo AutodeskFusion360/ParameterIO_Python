@@ -11,5 +11,4 @@ Samples are licensed under the terms of the [MIT License](http://opensource.org/
 
 ## Written by
 
-Written by Wayne Brill 
- (Autodesk Developer Network)
+Written by Wayne Brill <br /> (Autodesk Developer Network)
