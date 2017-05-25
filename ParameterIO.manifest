@@ -1,0 +1,12 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"addin",
+	"id":	"8CA4F9CA-B8A0-4F67-8353-8DEDA2BD4338",
+	"author":	"Wayne Brill, Autodesk",
+	"description":	{
+		"":	"Enables users to update parameters from or save them to a CSV (Comma Separated Values) file"
+	},
+	"version":	"1.2.0",
+	"runOnStartup":	true,
+	"supportedOS":	"windows|mac"
+}
