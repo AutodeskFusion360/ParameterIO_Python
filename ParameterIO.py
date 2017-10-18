@@ -221,13 +221,17 @@ def readTheParameters(theFileName):
                 nameOfParam = row[0]
                 unitOfParam = row[1]
                 expressionOfParam = row[2]
-                # userParameters.add does not like empty string as comment
-                # so we make it a space
-                commentOfParam = row[3]
-                # comment might be missing
-                if commentOfParam == '':
-                    commentOfParam = ' ' 
-                    
+
+                # First check to see if comment exists in csv file
+                if len(row) > 3:
+                    commentOfParam = row[3]
+                    # userParameters.add does not like empty string as comment
+                    # so we make it a space
+                    # comment might be missing
+                    if commentOfParam == '':
+                        commentOfParam = ' '
+                else:
+                    commentOfParam = ' '
                 # if the name of the paremeter is not an existing parameter add it
                 if nameOfParam not in paramsList:
                     valInput_Param = adsk.core.ValueInput.createByString(expressionOfParam) 
