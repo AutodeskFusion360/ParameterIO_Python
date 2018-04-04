@@ -194,7 +194,7 @@ def writeTheParameters(theFileName):
         except:
             paramUnit = ""
             
-        result = result + "\"" + _param.name +  "\",\"" + paramUnit +  "\",\"" + _param.expression + "\",\"" + _param.comment + "\"\n"    
+        result = result + "\"" + _param.name +  "\",\"" + paramUnit +  "\",\"" + _param.expression.replace('"', '""') + "\",\"" + _param.comment + "\"\n"    
                       
     with open(theFileName, 'w') as outputFile:
         outputFile.writelines(result)
@@ -223,10 +223,15 @@ def readTheParameters(theFileName):
                 expressionOfParam = row[2]
                 # userParameters.add does not like empty string as comment
                 # so we make it a space
-                commentOfParam = row[3]
-                # comment might be missing
+                commentOfParam = ' ' 
+                if len(row) > 3:
+                    commentOfParam = row[3]
+                    
+                # comment might be empty
                 if commentOfParam == '':
                     commentOfParam = ' ' 
+                    
+                print(expressionOfParam)
                     
                 # if the name of the paremeter is not an existing parameter add it
                 if nameOfParam not in paramsList:
