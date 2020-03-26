@@ -135,11 +135,23 @@
         <div class="helpdoc-element ">
             <div class="clear"></div>
             <h1 id="inunininfo">Installation/Uninstallation</h1>
-            <div class="helpdoc-text"><p>You can unload the add-in without uninstalling it by clicking the "<strong>Stop</strong>" button when the add-in is selected in the list box on the "<strong>Add-Ins</strong>" tab of the "<strong>Scripts and Add-Ins</strong>" dialog.</p>
-<p>Unchecking "<strong>Run on Startup</strong>" causes the add-in not to be loaded in future sessions of <strong>Fusion 360</strong>.</p>
-<p>The installer that ran when you downloaded this app/plug-in from Autodesk Exchange Store has already installed the app/plug-in.</p>
-<p>To uninstall this plug-in, exit the Autodesk product if you are currently running it, simply rerun the installer, and select the "Uninstall" button.</p>
-<p>OR, you can uninstall it from 'Control Panel\Programs\Programs and Features' (Windows 7/8/8.1) or Add/Remove Programs (Windows XP), just as you would uninstall any other application from your system.</p></div>
+            <div class="helpdoc-text">Install:</p>
+
+The installer that ran when you downloaded this app/plug-in from Autodesk App Store will start installing the app/plug-in. Or, simply double-click the downloaded installer to install the app/plugin.</p>
+
+Uninstall:</p>
+
+You can unload the add-in without uninstalling it by clicking the "Stop" button when the add-in is selected in the list box on the "Add-Ins" tab of the "Scripts and Add-Ins" dialog.</p>
+
+Unchecking "Run on Startup" causes the add-in not to be loaded in future sessions of Autodesk® Fusion 360™.</p>
+
+- Navigate to ./ApplicationsPlugins folder and select the app bundle you want to uninstall</p>
+
+- Either drag the app bundle to the Trash or right-click and select “Move to Trash”</p>
+
+- Right-click on the Trash-Can and select “Empty Trash”</p>
+
+- If you prefer keystrokes, you can also just select the app bundle and then hit Command+Delete to move the app to Trash, then empty the Trash and the app will be removed.</div>
         </div>
 
         
@@ -199,6 +211,17 @@
                         <tbody><tr>
                             <th>Version Number</th>
                             <th>Version Description</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    1.3.0
+                                </p>
+                            </td>
+                            <td>
+                                <p>Added support for inch values like 3' 3"</p>
+                                <p>In case of parameters referencing other parameters that do not yet exist, it will keep trying to add them until all are done</p>
+                            </td>
                         </tr>
                            <tr>
                                 <td>
