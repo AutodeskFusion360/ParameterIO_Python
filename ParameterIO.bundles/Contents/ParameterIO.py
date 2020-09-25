@@ -192,7 +192,10 @@ def updateParameter(design, paramsList, row):
         nameOfParam = row[0]
         unitOfParam = row[1]
         expressionOfParam = row[2]
-        commentOfParam = row[3]
+        try:
+            commentOfParam = row[3]
+        except:
+            commentOfParam = ''
     except Exception as e:
         print(str(e))
         # no plint to retry
