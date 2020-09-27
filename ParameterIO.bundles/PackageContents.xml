@@ -5,7 +5,7 @@
 	AutodeskProduct="Fusion360"
 	Name="Parameter I O"
 	Description="Enables the user to Import/Update parameters from or export them to a CSV file"
-	AppVersion="1.3.0"
+	AppVersion="1.4.0"
 	Author="Autodesk, Inc."
 	AppNameSpace="com.autodesk.exchange.Fusion360.Parameter I O"
 	HelpFile="./Contents/docs/Parameter I_O.html"
