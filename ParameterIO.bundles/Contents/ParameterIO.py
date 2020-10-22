@@ -217,7 +217,7 @@ def updateParameter(design, paramsList, row):
         # update the values of existing parameters            
         else:
             paramInModel = design.allParameters.itemByName(nameOfParam)
-            paramInModel.unit = unitOfParam
+            #paramInModel.unit = unitOfParam
             paramInModel.expression = expressionOfParam
             paramInModel.comment = commentOfParam
             print("Updated {}".format(nameOfParam))
