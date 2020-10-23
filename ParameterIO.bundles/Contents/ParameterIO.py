@@ -189,11 +189,11 @@ def writeParametersToFile(filePath):
 def updateParameter(design, paramsList, row):
     # get the values from the csv file.
     try:
-        nameOfParam = row[0]
-        unitOfParam = row[1]
-        expressionOfParam = row[2]
+        nameOfParam = row[0].strip()
+        unitOfParam = row[1].strip()
+        expressionOfParam = row[2].strip()
         try:
-            commentOfParam = row[3]
+            commentOfParam = row[3].strip()
         except:
             commentOfParam = ''
     except Exception as e:
