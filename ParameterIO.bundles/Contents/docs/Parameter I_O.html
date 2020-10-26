@@ -1,272 +1,336 @@
 ﻿<!DOCTYPE html>
 <!-- saved from url=(0140)https://apps.exchange.autodesk.com/FUSION/en/Detail/HelpDoc?id=appstore.exchange.autodesk.com%3aparameterio_windows32and64%3aen&mode=preview -->
-<html lang="en" class=" js canvas canvastext no-touch hashchange history draganddrop rgba multiplebgs borderimage boxshadow textshadow cssgradients csstransitions sessionstorage"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>Autodesk Exchange Store - Parameter I/O help file</title><link rel="stylesheet" href="./Resources/appstore-combined.min.css"></head>
-<body>
-<div id="main" class="detail-page helpdoc-page clearfix" style="min-height: 884px;">
-    <div id="content">
-        <div id="helpdoc-head">
-            <img id="helpdoc-head-icon" src="./Resources/resized_icon.png" alt="">
-            <div id="helpdoc-head-description">
-                <h1 id="helpdoc-product-title">Parameter I/O</h1>
-                
-                <div class="clear"></div>
-                <hr>
-                <div class="seller">Autodesk, Inc.</div>
-                <div class="description">Enables the user to Import/Update parameters from or export them to a CSV file.</div>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="clear"></div><br>
-        <div id="helpdoc-tag"><a href="#description" class="helpdoc-breadcrumb">Description</a>
+<html lang="en"
+    class=" js canvas canvastext no-touch hashchange history draganddrop rgba multiplebgs borderimage boxshadow textshadow cssgradients csstransitions sessionstorage">
+<!--<![endif]-->
 
-                 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Autodesk Exchange Store - Parameter I/O help file</title>
+    <link rel="stylesheet" href="./Resources/appstore-combined.min.css">
+</head>
+
+<body>
+    <div id="main" class="detail-page helpdoc-page clearfix" style="min-height: 884px;">
+        <div id="content">
+            <div id="helpdoc-head">
+                <img id="helpdoc-head-icon" src="./Resources/resized_icon.png" alt="">
+                <div id="helpdoc-head-description">
+                    <h1 id="helpdoc-product-title">Parameter I/O</h1>
+
+                    <div class="clear"></div>
+                    <hr>
+                    <div class="seller">Autodesk, Inc.</div>
+                    <div class="description">Enables the user to Import/Update parameters from or export them to a CSV
+                        file.</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div><br>
+            <div id="helpdoc-tag"><a href="#description" class="helpdoc-breadcrumb">Description</a>
                 <a href="#generalinfo" class="helpdoc-breadcrumb">General Usage Instructions</a>
                 <a href="#screensinfo" class="helpdoc-breadcrumb">Screenshots</a>
                 <a href="#inunininfo" class="helpdoc-breadcrumb">Installation/Uninstallation</a>
                 <a href="#addinfo" class="helpdoc-breadcrumb">Additional Information</a>
                 <a href="#contactinfo" class="helpdoc-breadcrumb">Contact</a>
                 <a href="#versionhistoryinfo" class="">Version History</a>
-            <div class="clear"></div>
-        </div><div class="helpdoc-element description">
-
-            <div class="clear"></div>
-
-            <h1 id="description">Description</h1>
-
-            <div class="helpdoc-text"> 
-
-
-
-<p>Enables the user to Import/Update parameters from or export them to a CSV (Comma Separated Values) file. When importing/updating parameters from a CSV file the data in it needs to be in a specific format: &lt;parameter name&gt;, 
-
-&lt;unit&gt;, &lt;value&gt;, &lt;comment&gt;</p>
-
-
-
-<p>The easiest way to make sure your CSV file follows the correct format might be to first export the parameters into a file and then have a look at its content - the import will require the data in the same format.</p>
-
-
-
-<p>When importing parameters from a file, if a parameter with the given name already exists, then its unit, value and comment will be updated, otherwise a new user parameter will be created with the provided values.</p>
-
-
-
-<p>When exporting parameters to a file, all available parameters will be exported, not just the user parameters.&nbsp;</p></div></div>
-        
-        
-        <div class="helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="generalinfo">General Usage Instructions</h1>
-            <div class="helpdoc-text"><p>Once installed, the "<strong>Parameter I/O</strong>" add-in will create a new button in the menu of the "<strong>Model</strong>" workspace's "<strong>Modify</strong>" panel.</p>
-<p>When clicking this button a dialog will pop up where you can choose if you want to import/update parameters inside the model from the CSV (Comma Separate values) file or Export them to a CSV file.</p>
-<p>Then another dialog will show asking you to select the file location and name to use.</p>
-<p><strong>When importing parameters from a file</strong>: if a given parameter already exists then its <strong>unit</strong>, <strong>value</strong> and <strong>comment</strong> will get updated, otherwise a new <strong>user parameter</strong> will be created with the provided values.</p>
-<p><strong>When exporting parameters to a file</strong>: all the parameters inside the model will be written to the given CSV file.</p>
-<p>You can see in one of the below screenshots the CSV format required for importing, but you can also examine a CSV file created when exporting parameters using this addin.</p></div>
-        </div>
-
-        
-        <div id="helpdoc-element-screenshot" class="helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="screensinfo">Screenshots</h1>
-            <div>
-                        <div class="helpdoc-screenshot">
-                            <a href="./Resources/original_45d73abd-fc45-44c3-bb96-8f2a859d2aa6_.png" title="Command inside the Modify panel menu" data-mime="Image" rel="gallery">
-                                <div class="helpdoc-img-container">
-                                    <span class="helper"></span>
-                                    <img class="helpdoc-screenshot-img" src="./Resources/original_45d73abd-fc45-44c3-bb96-8f2a859d2aa6_.png">
-                                    <span class="helper"></span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <div class="helpdoc-screenshot">
-                            <a href="./Resources/original_3a35d6d7-6fdd-449b-bcd3-159274b854e7_.png" title="Import or Export?" data-mime="Image" rel="gallery">
-                                <div class="helpdoc-img-container">
-                                    <span class="helper"></span>
-                                    <img class="helpdoc-screenshot-img" src="./Resources/original_3a35d6d7-6fdd-449b-bcd3-159274b854e7_.png">
-                                    <span class="helper"></span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <div class="helpdoc-screenshot">
-                            <a href="./Resources/original_5b212201-a868-4454-b2b6-8ee6c379795a_.png" title="Export finished" data-mime="Image" rel="gallery">
-                                <div class="helpdoc-img-container">
-                                    <span class="helper"></span>
-                                    <img class="helpdoc-screenshot-img" src="./Resources/original_5b212201-a868-4454-b2b6-8ee6c379795a_.png">
-                                    <span class="helper"></span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <div class="helpdoc-screenshot">
-                            <a href="./Resources/original_42764743-039f-4906-9ac5-ab4e73cea134_.png" title="CSV file opened in text editor" data-mime="Image" rel="gallery">
-                                <div class="helpdoc-img-container">
-                                    <span class="helper"></span>
-                                    <img class="helpdoc-screenshot-img" src="./Resources/original_42764743-039f-4906-9ac5-ab4e73cea134_.png">
-                                    <span class="helper"></span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <div class="helpdoc-screenshot">
-                            <a href="./Resources/original_9e339cc9-77a7-495f-a86a-a4a3d1b93d0f_.png" title="CSV file opened in Excel" data-mime="Image" rel="gallery">
-                                <div class="helpdoc-img-container">
-                                    <span class="helper"></span>
-                                    <img class="helpdoc-screenshot-img" src="./Resources/original_9e339cc9-77a7-495f-a86a-a4a3d1b93d0f_.png">
-                                    <span class="helper"></span>
-                                </div>
-                            </a>
-                            
-                        </div>
-        <div class="helpdoc-command helpdoc-element helpdoc-element-hidden">
-            <div class="clear"></div>
-            <h1 id="commandinfo">Commands</h1>
-            <div>
+                <div class="clear"></div>
             </div>
-        </div>
+            <div class="helpdoc-element description">
 
-        
-        <div class="helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="inunininfo">Installation/Uninstallation</h1>
-            <div class="helpdoc-text">Install:</p>
+                <div class="clear"></div>
 
-The installer that ran when you downloaded this app/plug-in from Autodesk App Store will start installing the app/plug-in. Or, simply double-click the downloaded installer to install the app/plugin.</p>
+                <h1 id="description">Description</h1>
 
-Uninstall:</p>
+                <div class="helpdoc-text">
 
-You can unload the add-in without uninstalling it by clicking the "Stop" button when the add-in is selected in the list box on the "Add-Ins" tab of the "Scripts and Add-Ins" dialog.</p>
+                    <p>Enables the user to Import/Update parameters from or export them to a CSV (Comma Separated
+                        Values) file. When importing/updating parameters from a CSV file the data in it needs to be in a
+                        specific format: &lt;parameter name&gt;,
 
-Unchecking "Run on Startup" causes the add-in not to be loaded in future sessions of Autodesk® Fusion 360™.</p>
+                        &lt;unit&gt;, &lt;value&gt;, &lt;comment&gt;</p>
 
-- Navigate to ./ApplicationsPlugins folder and select the app bundle you want to uninstall</p>
+                    <p>The easiest way to make sure your CSV file follows the correct format might be to first export
+                        the parameters into a file and then have a look at its content - the import will require the
+                        data in the same format.</p>
 
-- Either drag the app bundle to the Trash or right-click and select “Move to Trash”</p>
+                    <p>When importing parameters from a file, if a parameter with the given name already exists, then
+                        its unit, value and comment will be updated, otherwise a new user parameter will be created with
+                        the provided values.</p>
 
-- Right-click on the Trash-Can and select “Empty Trash”</p>
+                    <p>When exporting parameters to a file, all available parameters will be exported, not just the user
+                        parameters.&nbsp;</p>
+                </div>
+            </div>
 
-- If you prefer keystrokes, you can also just select the app bundle and then hit Command+Delete to move the app to Trash, then empty the Trash and the app will be removed.</div>
-        </div>
+            <div class="helpdoc-element ">
+                <div class="clear"></div>
+                <h1 id="generalinfo">General Usage Instructions</h1>
+                <div class="helpdoc-text">
+                    <p>Once installed, the "<strong>Parameter I/O</strong>" add-in will create a new button in the menu
+                        of the "<strong>Model</strong>" workspace's "<strong>Modify</strong>" panel.</p>
+                    <p>When clicking this button a dialog will pop up where you can choose if you want to import/update
+                        parameters inside the model from the CSV (Comma Separate values) file or Export them to a CSV
+                        file.</p>
+                    <p>Then another dialog will show asking you to select the file location and name to use.</p>
+                    <p><strong>When importing parameters from a file</strong>: if a given parameter already exists then
+                        its <strong>unit</strong>, <strong>value</strong> and <strong>comment</strong> will get updated,
+                        otherwise a new <strong>user parameter</strong> will be created with the provided values.</p>
+                    <p><strong>When exporting parameters to a file</strong>: all the parameters inside the model will be
+                        written to the given CSV file.</p>
+                    <p>You can see in one of the below screenshots the CSV format required for importing, but you can
+                        also examine a CSV file created when exporting parameters using this addin.</p>
+                </div>
+            </div>
 
-        
-        <div class="helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="addinfo">Additional Information</h1>
-            <div class="helpdoc-text"><p>The source code for this add-in, written in <a href="https://www.python.org/" target="_blank">Python</a>, is available inside the add-in's folder or on <a href="https://github.com/AutodeskFusion360/ParameterIO_Python">GitHub</a></p>
-<p>(C) Copyright 2015 by <a href="http://www.autodesk.com/">Autodesk, Inc.</a></p>
-<p>Permission to use, copy, modify, and distribute this software in object code form for any purpose and without fee is hereby granted, provided that the above copyright notice appears in all copies and that both that copyright notice and the limited warranty and restricted rights notice below appear in all supporting documentation.</p>
-<p>AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. AUTODESK SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. AUTODESK, INC. DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED OR ERROR FREE.</p></div>
-        </div>
-
-        
-        <div class="helpdoc-element helpdoc-element-hidden">
-            <div class="clear"></div>
-            <h1 id="knownissueinfo">Known Issues</h1>
-            <div class="helpdoc-text"></div>
-        </div>
-
-        
-        <div class="helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="contactinfo">Contact</h1>
-            <div>
-                
+            <div id="helpdoc-element-screenshot" class="helpdoc-element ">
+                <div class="clear"></div>
+                <h1 id="screensinfo">Screenshots</h1>
                 <div>
-                    <div class="">Company Name: Autodesk, Inc.</div>
-                    <div class="">Company URL: <a href="http://www.autodesk.com/" target="_blank">www.autodesk.com</a></div>
-                    <div class="">Support Contact: <a href="mailto:fusion.apps@autodesk.com">fusion.apps@autodesk.com</a></div>
-                </div>
-                
-                <div class="helpdoc-element ">
-                    <div class="clear"></div>
-                    <h1 id="authorinfo">Author/Company Information</h1>
-                    <div class="helpdoc-text"><p>This add-in was written by <span style="color: black; line-height: 115%; font-family: &#39;Verdana&#39;,&#39;sans-serif&#39;; font-size: 7.5pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-bidi-font-family: &#39;Times New Roman&#39;; mso-bidi-theme-font: minor-bidi;"><a href="http://adndevblog.typepad.com/manufacturing/wayne-brill.html"><span style="color: #1f5397; line-height: 115%; font-family: &#39;Arial&#39;,&#39;sans-serif&#39;; font-size: 9pt; text-decoration: none; text-underline: none;">Wayne Brill</span></a></span><span style="color: black; line-height: 115%; font-family: &#39;Arial&#39;,&#39;sans-serif&#39;; font-size: 9pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><span>.</span></span></p>
-<p>Wayne is a Developer Advocate at Autodesk, working as part of the Autodesk Developer Network</p></div>
-                </div>
-                
-                <div class="helpdoc-element ">
-                    <div class="clear"></div>
-                    <h1 id="supportinfo">Support Information</h1>
-                    <div class="helpdoc-text"><p>Email us at <a href="mailto:fusion.apps@autodesk.com">fusion.apps@autodesk.com</a> with feedback or requests for enhancements.</p></div>
+                    <div class="helpdoc-screenshot">
+                        <a href="./Resources/original_45d73abd-fc45-44c3-bb96-8f2a859d2aa6_.png"
+                            title="Command inside the Modify panel menu" data-mime="Image" rel="gallery">
+                            <div class="helpdoc-img-container">
+                                <span class="helper"></span>
+                                <img class="helpdoc-screenshot-img"
+                                    src="./Resources/original_45d73abd-fc45-44c3-bb96-8f2a859d2aa6_.png">
+                                <span class="helper"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="helpdoc-screenshot">
+                        <a href="./Resources/original_3a35d6d7-6fdd-449b-bcd3-159274b854e7_.png"
+                            title="Import or Export?" data-mime="Image" rel="gallery">
+                            <div class="helpdoc-img-container">
+                                <span class="helper"></span>
+                                <img class="helpdoc-screenshot-img"
+                                    src="./Resources/original_3a35d6d7-6fdd-449b-bcd3-159274b854e7_.png">
+                                <span class="helper"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="helpdoc-screenshot">
+                        <a href="./Resources/original_5b212201-a868-4454-b2b6-8ee6c379795a_.png" title="Export finished"
+                            data-mime="Image" rel="gallery">
+                            <div class="helpdoc-img-container">
+                                <span class="helper"></span>
+                                <img class="helpdoc-screenshot-img"
+                                    src="./Resources/original_5b212201-a868-4454-b2b6-8ee6c379795a_.png">
+                                <span class="helper"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="helpdoc-screenshot">
+                        <a href="./Resources/original_42764743-039f-4906-9ac5-ab4e73cea134_.png"
+                            title="CSV file opened in text editor" data-mime="Image" rel="gallery">
+                            <div class="helpdoc-img-container">
+                                <span class="helper"></span>
+                                <img class="helpdoc-screenshot-img"
+                                    src="./Resources/original_42764743-039f-4906-9ac5-ab4e73cea134_.png">
+                                <span class="helper"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="helpdoc-screenshot">
+                        <a href="./Resources/original_9e339cc9-77a7-495f-a86a-a4a3d1b93d0f_.png"
+                            title="CSV file opened in Excel" data-mime="Image" rel="gallery">
+                            <div class="helpdoc-img-container">
+                                <span class="helper"></span>
+                                <img class="helpdoc-screenshot-img"
+                                    src="./Resources/original_9e339cc9-77a7-495f-a86a-a4a3d1b93d0f_.png">
+                                <span class="helper"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="helpdoc-command helpdoc-element helpdoc-element-hidden">
+                        <div class="clear"></div>
+                        <h1 id="commandinfo">Commands</h1>
+                        <div>
+                        </div>
+                    </div>
+
+                    <div class="helpdoc-element ">
+                        <div class="clear"></div>
+                        <h1 id="inunininfo">Installation/Uninstallation</h1>
+                        <div class="helpdoc-text">Install:</p>
+
+                            The installer that ran when you downloaded this app/plug-in from Autodesk App Store will
+                            start installing the app/plug-in. Or, simply double-click the downloaded installer to
+                            install the app/plugin.</p>
+
+                            Uninstall:</p>
+
+                            You can unload the add-in without uninstalling it by clicking the "Stop" button when the
+                            add-in is selected in the list box on the "Add-Ins" tab of the "Scripts and Add-Ins" dialog.
+                            </p>
+
+                            Unchecking "Run on Startup" causes the add-in not to be loaded in future sessions of
+                            Autodesk® Fusion 360™.</p>
+
+                            - Navigate to ./ApplicationsPlugins folder and select the app bundle you want to uninstall
+                            </p>
+
+                            - Either drag the app bundle to the Trash or right-click and select “Move to Trash”</p>
+
+                            - Right-click on the Trash-Can and select “Empty Trash”</p>
+
+                            - If you prefer keystrokes, you can also just select the app bundle and then hit
+                            Command+Delete to move the app to Trash, then empty the Trash and the app will be removed.
+                        </div>
+                    </div>
+
+                    <div class="helpdoc-element ">
+                        <div class="clear"></div>
+                        <h1 id="addinfo">Additional Information</h1>
+                        <div class="helpdoc-text">
+                            <p>The source code for this add-in, written in <a href="https://www.python.org/"
+                                    target="_blank">Python</a>, is available inside the add-in's folder or on <a
+                                    href="https://github.com/AutodeskFusion360/ParameterIO_Python">GitHub</a></p>
+                            <p>(C) Copyright 2015 by <a href="http://www.autodesk.com/">Autodesk, Inc.</a></p>
+                            <p>Permission to use, copy, modify, and distribute this software in object code form for any
+                                purpose and without fee is hereby granted, provided that the above copyright notice
+                                appears in all copies and that both that copyright notice and the limited warranty and
+                                restricted rights notice below appear in all supporting documentation.</p>
+                            <p>AUTODESK PROVIDES THIS PROGRAM "AS IS" AND WITH ALL FAULTS. AUTODESK SPECIFICALLY
+                                DISCLAIMS ANY IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE.
+                                AUTODESK, INC. DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE UNINTERRUPTED
+                                OR ERROR FREE.</p>
+                        </div>
+                    </div>
+
+                    <div class="helpdoc-element helpdoc-element-hidden">
+                        <div class="clear"></div>
+                        <h1 id="knownissueinfo">Known Issues</h1>
+                        <div class="helpdoc-text"></div>
+                    </div>
+
+                    <div class="helpdoc-element ">
+                        <div class="clear"></div>
+                        <h1 id="contactinfo">Contact</h1>
+                        <div>
+
+                            <div>
+                                <div class="">Company Name: Autodesk, Inc.</div>
+                                <div class="">Company URL: <a href="http://www.autodesk.com/"
+                                        target="_blank">www.autodesk.com</a></div>
+                                <div class="">Support Contact: <a
+                                        href="mailto:fusion.apps@autodesk.com">fusion.apps@autodesk.com</a></div>
+                            </div>
+
+                            <div class="helpdoc-element ">
+                                <div class="clear"></div>
+                                <h1 id="authorinfo">Author/Company Information</h1>
+                                <div class="helpdoc-text">
+                                    <p>This add-in was written by <span
+                                            style="color: black; line-height: 115%; font-family: Verdana, sans-serif; font-size: 7.5pt;"><a
+                                                href="http://adndevblog.typepad.com/manufacturing/wayne-brill.html"><span
+                                                    style="color: #1f5397; line-height: 115%; font-family: Arial,sans-serif; font-size: 9pt; text-decoration: none;">Wayne
+                                                    Brill</span></a></span><span
+                                            style="color: black; line-height: 115%; font-family: Arial,sans-serif; font-size: 9pt;"><span>.</span></span>
+                                    </p>
+                                    <p>Wayne is a Developer Advocate at Autodesk, working as part of the Autodesk
+                                        Developer Network</p>
+                                </div>
+                            </div>
+
+                            <div class="helpdoc-element ">
+                                <div class="clear"></div>
+                                <h1 id="supportinfo">Support Information</h1>
+                                <div class="helpdoc-text">
+                                    <p>Email us at <a
+                                            href="mailto:fusion.apps@autodesk.com">fusion.apps@autodesk.com</a> with
+                                        feedback or requests for enhancements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="helpdoc-version helpdoc-element ">
+                        <div class="clear"></div>
+                        <h1 id="versionhistoryinfo">Version History</h1>
+                        <div>
+                            <table class="helpdoc-table" id="helpdoc-table-version">
+                                <colgroup>
+                                    <col style="width:150px">
+                                    <col style="width:680px">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>Version Number</th>
+                                        <th>Version Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.5.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>Compatibility with latest Fusion 360 update</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.4.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>Compatibility with latest Python compiler</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.3.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>Added support for inch values like 3' 3"</p>
+                                            <p>In case of parameters referencing other parameters that do not yet exist,
+                                                it will keep trying to add them until all are done</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.2.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>Added support for unitless Model Parameters and commas in the Parameter
+                                                Comments</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.1.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>Updated to support Fusion 360 version 2.0.1514</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                1.0.0
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>The first release version of the AddIn</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+</body>
 
-        
-        <div class="helpdoc-version helpdoc-element ">
-            <div class="clear"></div>
-            <h1 id="versionhistoryinfo">Version History</h1>
-            <div>
-                    <table class="helpdoc-table" id="helpdoc-table-version">
-                        <colgroup>
-                            <col style="width:150px">
-                            <col style="width:680px">
-                        </colgroup>
-                        <tbody><tr>
-                            <th>Version Number</th>
-                            <th>Version Description</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>
-                                    1.4.0
-                                </p>
-                            </td>
-                            <td>
-                                <p>Compatibility with latest Python compiler</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>
-                                    1.3.0
-                                </p>
-                            </td>
-                            <td>
-                                <p>Added support for inch values like 3' 3"</p>
-                                <p>In case of parameters referencing other parameters that do not yet exist, it will keep trying to add them until all are done</p>
-                            </td>
-                        </tr>
-                           <tr>
-                                <td>
-                                    <p>
-                                        1.2.0
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Added support for unitless Model Parameters and commas in the Parameter Comments</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        1.1.0
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>Updated to support Fusion 360 version 2.0.1514</p>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td>
-                                    <p>
-                                        1.0.0
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>The first release version of the AddIn</p>
-                                </td>
-                            </tr>
-                    </tbody></table>
-            </div>
-        </div>
-
-    </div>
-</div>
-</body></html>
+</html>
