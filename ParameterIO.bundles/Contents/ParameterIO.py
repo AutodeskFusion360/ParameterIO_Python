@@ -58,7 +58,7 @@ def run(context):
                 try:
                     cmd = args.command
                     inputs = cmd.commandInputs
-                    radioButtonGroup = inputs.tableInput = inputs.itemById('radioImportExport')
+                    radioButtonGroup = inputs.tableInput = inputs.itemById('radioImportExport') 
                     doImportExport(radioButtonGroup.selectedItem.name == 'Import')
                 except:
                     if ui:
@@ -66,7 +66,7 @@ def run(context):
 
         class CommandCreatedHandler(adsk.core.CommandCreatedEventHandler):
             def __init__(self):
-                super().__init__()
+                super().__init__() 
             def notify(self, args):
                 try:
                     cmd = args.command
@@ -89,21 +89,21 @@ def run(context):
 
         commandDefinitions = ui.commandDefinitions
 
-                # check if we have the command definition
+		# check if we have the command definition
         commandDefinition = commandDefinitions.itemById(_commandId)
         if not commandDefinition:
-            commandDefinition = commandDefinitions.addButtonDefinition(_commandId, commandName, commandDescription, commandResources)
+            commandDefinition = commandDefinitions.addButtonDefinition(_commandId, commandName, commandDescription, commandResources)		 
 
         onCommandCreated = CommandCreatedHandler()
         commandDefinition.commandCreated.add(onCommandCreated)
         # keep the handler referenced beyond this function
         _handlers.append(onCommandCreated)
-
+        
         # add a command on create panel in modeling workspace
         workspaces = ui.workspaces
         modelingWorkspace = workspaces.itemById(_workspaceToUse)
         toolbarPanels = modelingWorkspace.toolbarPanels
-        toolbarPanel = toolbarPanels.itemById(_panelToUse)
+        toolbarPanel = toolbarPanels.itemById(_panelToUse) 
         toolbarControlsPanel = toolbarPanel.controls
         toolbarControlPanel = toolbarControlsPanel.itemById(_commandId)
         if not toolbarControlPanel:
@@ -125,7 +125,7 @@ def stop(context):
         commandControlPanel = commandControlByIdForPanel(_commandId)
         if commandControlPanel:
             objArray.append(commandControlPanel)
-
+            
         commandDefinition = commandDefinitionById(_commandId)
         if commandDefinition:
             objArray.append(commandDefinition)
@@ -140,8 +140,8 @@ def stop(context):
 def doImportExport(isImport):
      app = adsk.core.Application.get()
      ui  = app.userInterface
-
-     try:
+     
+     try:   
          fileDialog = ui.createFileDialog()
          fileDialog.isMultiSelectEnabled = False
          fileDialog.title = "Get the file to read from or the file to save the parameters to"
@@ -151,7 +151,7 @@ def doImportExport(isImport):
              dialogResult = fileDialog.showOpen()
          else:
              dialogResult = fileDialog.showSave()
-
+             
          if dialogResult == adsk.core.DialogResults.DialogOK:
              filename = fileDialog.filename
          else:
@@ -165,12 +165,12 @@ def doImportExport(isImport):
 
      except:
          if ui:
-             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
+             ui.messageBox('Failed:\n{}'.format(traceback.format_exc())) 
 
 def writeParametersToFile(filePath):
     app = adsk.core.Application.get()
     design = app.activeProduct
-
+                      
     with open(filePath, 'w', newline='') as csvFile:
         csvWriter = csv.writer(csvFile, dialect=csv.excel)
         for param in design.allParameters:
@@ -178,14 +178,14 @@ def writeParametersToFile(filePath):
                 paramUnit = param.unit
             except:
                 paramUnit = ""
-
-            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment])
-
-    # get the name of the file without the path
+            
+            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment]) 
+    
+    # get the name of the file without the path    
     partsOfFilePath = filePath.split("/")
     ui  = app.userInterface
-    ui.messageBox('Parameters written to ' + partsOfFilePath[-1])
-
+    ui.messageBox('Parameters written to ' + partsOfFilePath[-1])       
+   
 def updateParameter(design, paramsList, row):
     # get the values from the csv file.
     try:
@@ -208,23 +208,23 @@ def updateParameter(design, paramsList, row):
     # so we make it a space
     # comment might be missing
     #if commentOfParam == '':
-    #    commentOfParam = ' '
+    #    commentOfParam = ' ' 
 
-    try:
+    try: 
         # if the name of the paremeter is not an existing parameter add it
         if nameOfParam not in paramsList:
-            valInputparam = adsk.core.ValueInput.createByString(expressionOfParam)
+            valInputparam = adsk.core.ValueInput.createByString(expressionOfParam) 
             design.userParameters.add(nameOfParam, valInputparam, unitOfParam, commentOfParam)
             print("Added {}".format(nameOfParam))
-
-        # update the values of existing parameters
+            
+        # update the values of existing parameters            
         else:
             paramInModel = design.allParameters.itemByName(nameOfParam)
             #paramInModel.unit = unitOfParam
             paramInModel.expression = expressionOfParam
             paramInModel.comment = commentOfParam
             print("Updated {}".format(nameOfParam))
-
+        
         return True
 
     except Exception as e:
@@ -239,17 +239,17 @@ def readParametersFromFile(filePath):
     try:
         paramsList = []
         for oParam in design.allParameters:
-            paramsList.append(oParam.name)
+            paramsList.append(oParam.name) 
 
-        retryList = []
-
+        retryList = []            
+        
         # read the csv file.
         with open(filePath) as csvFile:
             csvReader = csv.reader(csvFile, dialect=csv.excel)
             for row in csvReader:
                 # if the parameter is referencing a non-existent
                 # parameter then  this will fail
-                # so let's store those params and try to add them in the next round
+                # so let's store those params and try to add them in the next round 
                 if not updateParameter(design, paramsList, row):
                     retryList.append(row)
 
@@ -260,7 +260,7 @@ def readParametersFromFile(filePath):
             for row in retryList:
                 if updateParameter(design, paramsList, row):
                     retryList.remove(row)
-
+                
         if len(retryList) > 0:
             params = ""
             for row in retryList:
@@ -271,4 +271,4 @@ def readParametersFromFile(filePath):
             ui.messageBox('Finished reading and updating parameters')
     except:
         if ui:
-            ui.messageBox('AddIn Stop Failed:\n{}'.format(traceback.format_exc()))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ~                                                                                                                                                       
+            ui.messageBox('AddIn Stop Failed:\n{}'.format(traceback.format_exc()))
