@@ -89,7 +89,7 @@ def run(context):
 
         commandDefinitions = ui.commandDefinitions
 
-		# check if we have the command definition
+        # check if we have the command definition
         commandDefinition = commandDefinitions.itemById(_commandId)
         if not commandDefinition:
             commandDefinition = commandDefinitions.addButtonDefinition(_commandId, commandName, commandDescription, commandResources)		 
@@ -179,7 +179,7 @@ def writeParametersToFile(filePath):
             except:
                 paramUnit = ""
             
-            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment]) 
+            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment, param.value]) 
     
     # get the name of the file without the path    
     partsOfFilePath = filePath.split("/")
