@@ -190,8 +190,11 @@ def updateParameter(design, paramsList, row):
     # get the values from the csv file.
     try:
         nameOfParam = row[0].strip()
+        nameOfParam = nameOfParam.replace(" ", "") # remove interior spaces
         unitOfParam = row[1].strip()
+        unitOfParam = unitOfParam.replace(" ", "")
         expressionOfParam = row[2].strip()
+        expressionOfParam = expressionOfParam.replace(" ", "");
         try:
             commentOfParam = row[3].strip()
         except:
