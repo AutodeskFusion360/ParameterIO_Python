@@ -89,7 +89,7 @@ def run(context):
 
         commandDefinitions = ui.commandDefinitions
 
-        # check if we have the command definition
+		# check if we have the command definition
         commandDefinition = commandDefinitions.itemById(_commandId)
         if not commandDefinition:
             commandDefinition = commandDefinitions.addButtonDefinition(_commandId, commandName, commandDescription, commandResources)		 
@@ -179,7 +179,7 @@ def writeParametersToFile(filePath):
             except:
                 paramUnit = ""
             
-            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment, param.value]) 
+            csvWriter.writerow([param.name, paramUnit, param.expression, param.comment]) 
     
     # get the name of the file without the path    
     partsOfFilePath = filePath.split("/")
@@ -188,17 +188,12 @@ def writeParametersToFile(filePath):
    
 def updateParameter(design, paramsList, row):
     # get the values from the csv file.
-        try:
+    try:
         nameOfParam = row[0].strip()
-        nameOfParam = nameOfParam.replace(" ", "") # remove interior spaces
         unitOfParam = row[1].strip()
-        unitOfParam = unitOfParam.replace(" ", "")
         expressionOfParam = row[2].strip()
-        expressionOfParam = expressionOfParam.replace(" ", "");
         try:
             commentOfParam = row[3].strip()
-
-
         except:
             commentOfParam = ''
     except Exception as e:
